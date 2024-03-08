@@ -1,12 +1,12 @@
 "use client";
 
 import { Novatrix } from "uvcanvas";
-import { TypewriterEffect } from "@components/typewriter";
-import { MaskContainer } from "@components/mask";
+import { MaskContainer } from "./components/mask";
+import { TypewriterEffect } from "./components/typewriter";
 
 import { useState } from "react";
 
-export default function Home() {
+export default function App() {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="h-screen w-screen">
@@ -31,7 +31,7 @@ export default function Home() {
                   : "font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-black py-2",
               },
             ]}
-            cursorClassName="bg-black"
+            cursorClassName={isHovered ? "bg-transparent" : "bg-black"}
           />
         </div>
         <Novatrix />
